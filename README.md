@@ -2,7 +2,7 @@
 
 ## Overview
 
-The purpose of this project was to analyze past weather data for the city of Oahu, Hawaii at the request of a potential investor. The investor wanted to know if the location's weather (specifically precipitation amounts and temperatures) would be suitable. A concern was the amount of rain and how that may impact business. Analytics were then run on the weather data set for Oahu. This involved reading a dataset and connecting to a local database (SQLite). Jupyter Notebook, VS Code, and Git were the applications used. The analysis was completed with Python, using several libraries (SQLAlchemy, Pandas, Numpy, Matplotlib, Flask). The data was filtered, plotted, and summary statistics were calculated. A Flask application was created with several routes which can be used to access the specifical weather data for the location for the desired year/months. For this analysis, I created additional querys to filter the SQLite tables to return weather data for the months of June and December which can be used to compare the data at different times of the year.
+The purpose of this project was to analyze past weather data for the city of Oahu, Hawaii at the request of a potential investor. The investor wanted to know if the location's weather (specifically precipitation amounts and temperatures) would be suitable. A concern was the amount of rain and how that may impact business. Analytics were then run on the weather data set for Oahu. This involved reading a dataset and connecting to a local database (SQLite). Jupyter Notebook, VS Code, and Git were the applications used. The analysis was completed with Python, using several libraries (SQLAlchemy, Pandas, Numpy, Matplotlib, Flask). The data was filtered, plotted, and summary statistics were calculated. A Flask application was created with several routes which can be used to access the specific weather data for the location for the desired year/months. For this analysis, I created additional querys to filter the SQLite tables to return weather data for the months of June and December which can be used to compare the data at different times of the year.
 
 ## Results
 
@@ -34,7 +34,7 @@ Oahu, Hawaii seems to be a very good choice for a new business. This analysis su
 
 1. `session.query(Measurement.prcp).filter(extract('month', Measurement.date) == 6)` 
 
-This query would return the precpitation data for the month of June. A similary query could be run for December, which would allow for a comparison of precipitation amounts for June vs December. These results could then be loaded in to separate DataFrames where more analysis can take place.
+This query would return the precpitation data for the month of June. A similar query could be run for December, which would allow for a comparison of precipitation amounts for June vs December. These results could then be loaded in to separate DataFrames where more analysis can take place.
 
 2. `for i in range(1,13):`  
         `result = session.query(func.min(Measurement.tobs).filter(Measurement.station == 'USC00519281').filter(extract('month', Measurement.date) == i)).all()`

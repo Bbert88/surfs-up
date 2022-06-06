@@ -1,4 +1,4 @@
-# Analysis of Hawaii Weather Data using Pyhton libraries: Pandas and SQLAlchemy
+# Analysis of Hawaii Weather Data using Python libraries (Pandas and SQLAlchemy ORM), Flask, and SQLite
 
 ## Overview
 
